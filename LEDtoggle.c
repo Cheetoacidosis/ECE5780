@@ -1,6 +1,7 @@
 #include "LEDtoggle.h"
 #include "queue.h"
 #include "data.h"
+#include "censor.h"
 
 //BaseType_t LEDstate = 0;
 QueueHandle_t xStateQueue;
@@ -113,24 +114,23 @@ void prvSetupHardware(){
 }
 
 
-BaseType_t SetupQueue() {
-	xStateQueue = xQueueCreate(1, sizeof(BaseType_t));
-	//xFrequencyQueue = xQueueCreate(1, 2);
-	
-	if (xStateQueue != NULL){
-		//uint8_t initial_state = 1;
-		BaseType_t initial_state = 1;
-		//char initial_freq = 1;
-		
-		xQueueOverwrite(xStateQueue, (void *) &initial_state);
-		//xQueueOverwrite(xFrequencyQueue, &initial_freq);
-		return 1;
-	}
-	else {
-		return NULL; // In theory, will return NULL if either of the queues fails to create
-	}
-}
-
+//BaseType_t SetupQueue() {
+//	xStateQueue = xQueueCreate(1, sizeof(BaseType_t));
+//	//xFrequencyQueue = xQueueCreate(1, 2);
+//	
+//	if (xStateQueue != NULL){
+//		//uint8_t initial_state = 1;
+//		BaseType_t initial_state = 1;
+//		//char initial_freq = 1;
+//		
+//		xQueueOverwrite(xStateQueue, (void *) &initial_state);
+//		//xQueueOverwrite(xFrequencyQueue, &initial_freq);
+//		return 1;
+//	}
+//	else {
+//		return NULL; // In theory, will return NULL if either of the queues fails to create
+//	}
+//}
 
 void TIM4_IRQHandler() {
 	
@@ -287,9 +287,15 @@ void USART2_IRQHandler(){
 			(pRx_counter) = 0;
 	}
 	
-	BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
-	TIM4->ARR = ARR_LUT[frequency_index];
-		//TIM4->ARR = ARR_LUT[0];
+	if (buffer[pRx_counter] == 0x74) {	//'t' in ASCII
+		BaseType_t torp = buffer[pRx_counter];
+		xQueueSendToBackFromISR(SensorQueueueueueueueueueueueueueueue, &torp, NULL);
+	}
+	else {
+		BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
+		TIM4->ARR = ARR_LUT[frequency_index];
+			//TIM4->ARR = ARR_LUT[0];	
+	}
 }
 
 //void USART2_IRQHandler(void) {

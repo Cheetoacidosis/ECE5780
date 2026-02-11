@@ -419,6 +419,16 @@
               <FileType>5</FileType>
               <FilePath>.\censor.h</FilePath>
             </File>
+            <File>
+              <FileName>my_queues.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\my_queues.c</FilePath>
+            </File>
+            <File>
+              <FileName>my_queues.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\my_queues.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

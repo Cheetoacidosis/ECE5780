@@ -14,4 +14,4 @@
   C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h \
   C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h \
   C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h data.h \
-  stm32l476xx.h
+  stm32l476xx.h censor.h

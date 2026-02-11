@@ -2,6 +2,7 @@
 #include "LEDtoggle.h"
 #include "queue.h"
 #include "data.h"
+#include "censor.h"
 
 int main( void )
 {
@@ -10,15 +11,11 @@ int main( void )
 	prvSetupHardware();
 	
 	//enable interrupts
-
-	
 	NVIC_SetPriority(USART2_IRQn, 0);
 	NVIC_EnableIRQ(USART2_IRQn);
 	USART_Init(USART2);
 	
 	//enable interrupts
-
-//	
 	NVIC_SetPriority(USART1_IRQn, 0);
 	NVIC_EnableIRQ(USART1_IRQn);
 	USART_Init(USART1);
@@ -40,6 +37,14 @@ int main( void )
 									configMINIMAL_STACK_SIZE,
 									NULL,
 									1,
+									&xHandle
+								);
+		
+		xTaskCreate( xUS100SensorRead,
+									"Do a little UART1'ing",
+									configMINIMAL_STACK_SIZE,
+									NULL,
+									2,
 									&xHandle
 								);
 			

@@ -3,6 +3,7 @@
 ".\objects\ledtoggle.o"
 ".\objects\data.o"
 ".\objects\censor.o"
+".\objects\my_queues.o"
 ".\objects\clib_os.o"
 ".\objects\cmsis_os2.o"
 ".\objects\os_systick.o"
