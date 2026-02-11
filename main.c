@@ -10,17 +10,15 @@ int main( void )
 	prvSetupHardware();
 	
 	//enable interrupts
-	USART2->CR1 |= USART_CR1_RXNEIE;
-	USART2->CR1 &= ~USART_CR1_TXEIE;
+
 	
 	NVIC_SetPriority(USART2_IRQn, 0);
 	NVIC_EnableIRQ(USART2_IRQn);
 	USART_Init(USART2);
 	
 	//enable interrupts
-	USART1->CR1 |= USART_CR1_RXNEIE;
-	USART1->CR1 &= ~USART_CR1_TXEIE;
-	
+
+//	
 	NVIC_SetPriority(USART1_IRQn, 0);
 	NVIC_EnableIRQ(USART1_IRQn);
 	USART_Init(USART1);

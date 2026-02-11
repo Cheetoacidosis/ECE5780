@@ -2,26 +2,63 @@
 
 void USART_Init(USART_TypeDef * USARTx) 
 {  
-	//Set up for USART2
-	GPIOA->MODER &= ~(0xf << (4));
-	GPIOA->MODER |= (0xa << (4));
 	
-	GPIOA->AFR[0] |= (0x77 << (8));
+	if (USARTx == USART2) {
+		//Set up for USART2
+		GPIOA->MODER &= ~(0xf << (4));
+		GPIOA->MODER |= (0xa << (4));
+		
+		GPIOA->AFR[0] |= (0x77 << (8));
+		
+		GPIOA->OSPEEDR |= (0xf << 4);
+		
+		GPIOA->PUPDR &= ~(0xf << 4);
+		GPIOA->PUPDR |= (0x5 << 4);
+		
+		GPIOA->OTYPER &= ~(0x3 << 2);
+		
+		RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
 	
-	GPIOA->OSPEEDR |= (0xf << 4);
-	
-	GPIOA->PUPDR &= ~(0xf << 4);
-	GPIOA->PUPDR |= (0x5 << 4);
-	
-	GPIOA->OTYPER &= ~(0x3 << 2);
-	
-	RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
-	
-	RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
-	RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
+		USART2->CR1 |= USART_CR1_RXNEIE;
+		USART2->CR1 &= ~USART_CR1_TXEIE;
 
+	} 
 	//Setup for USART1
-	
+	else if (USARTx == USART1) {
+	//PA  
+		//Tx 9 
+		//Rx 10
+		// put them into AF mode
+		GPIOA -> MODER &= ~(0b11 << (9*2));
+		GPIOA -> MODER &= ~(0b11 << (10*2));
+		GPIOA -> MODER |= (0b10 << (9*2));
+		GPIOA -> MODER |= (0b10 << (10*2));
+		
+		//Configure AF mode. 7 is USART rx/tx
+		GPIOA->AFR[1] |= (0x77 << (4*1));
+		
+		//VERY HIGH SPEEEEEEED
+		GPIOA->OSPEEDR |= (0xf << 2*9);
+		
+		//Pull=up
+		GPIOA->PUPDR &= ~(0xf << 2*9);
+		GPIOA->PUPDR |= (0x5 << 2*9);
+		
+		//Push-pull
+		GPIOA->OTYPER &= ~(0x3 << 9);
+		
+		//Clock!!!
+		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART1SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART1SEL_0;
+
+		USART1->CR1 |= USART_CR1_RXNEIE;
+		USART1->CR1 &= ~USART_CR1_TXEIE;
+	}
 
 
 	
