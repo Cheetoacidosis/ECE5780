@@ -2,42 +2,28 @@
 
 void USART_Init(USART_TypeDef * USARTx) 
 {  
-	// Enable GPIO clock and configure the Tx pin and the Rx pin as: 
-	// Alternate function, High Speed, Push-pull, Pull-up 
+	//Set up for USART2
+	GPIOA->MODER &= ~(0xf << (4));
+	GPIOA->MODER |= (0xa << (4));
 	
-	//------------------- GPIO Initialization for USART 2 ----------------- 
-	// PB.6 = AF7 (USARTl_TX), PB.7 = AF7 (USARTl_RX), See Appendix I 
-	RCC->AHB2ENR |= RCC_AHB2ENR_GPIOAEN; // Enable GPIO port A clock 
+	GPIOA->AFR[0] |= (0x77 << (8));
 	
-	// 00 = Input, 01 = Output, 10 = Alternate Function, 11 = Analog 
-	GPIOA->MODER &= ~(0xF << (2*2)); // Clear mode bits for pin 6 and 7 
-	GPIOA->MODER |= 0xA << (2*2); // Select Alternate Function mode
+	GPIOA->OSPEEDR |= (0xf << 4);
 	
-	// Alternative function 7 = USART 2 
-	// Appendix I shows alL alternate functions 
-//	GPIOA->AFR[0] |= 0x77 << (4*6); // Set pin 6 and 7 to AF 7 
-	GPIOA->AFR[0] &= ~((0xFu << (2*4)) | (0xFu << (3*4)));
-	GPIOA->AFR[0] |= ((7u << (2*4)) | (7u << (3*4)));
-	// GPIO Speed: 00 = Low speed, 01 = Medium speed, 
-	// 10 = Fast speed, 11 = High speed 
-	GPIOA->OSPEEDR |= 0xF << (2*2); 
+	GPIOA->PUPDR &= ~(0xf << 4);
+	GPIOA->PUPDR |= (0x5 << 4);
 	
-	// GPIO Push-Pull: 00 = No pull-uplpuLl-down, 01 = Pull-up (01) 
-	// 10 = Pull-down, 11 = Reserved 
-	GPIOA->PUPDR &= ~(0xF << (2*2)); 
-	GPIOA->PUPDR |= 0x5 << (2*2); // Select pull-up 
+	GPIOA->OTYPER &= ~(0x3 << 2);
 	
-	// GPIO Output Type: 0 = push-pull, 1 = open drain 
-	GPIOA->OTYPER &= ~(0x3 << 2); 
-	
-
-	
-	//Enable USART
 	RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
 	
-	//Select USART2
-	RCC->CCIPR &= ~(3u << 2);
-	RCC->CCIPR |= (1u << 2);
+	RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
+	RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
+
+	//Setup for USART1
+	
+
+
 	
 	// Disable USART 
 	USARTx->CR1 &= ~USART_CR1_UE; 
