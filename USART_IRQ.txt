@@ -1,0 +1,18 @@
+void USART_IRQHandler(USART_TypeDef * USARTx, uint8_t * buffer, uint32_t * pRx_counter){
+	if(USARTx->ISR & USART_ISR_RXNE) { // Received data
+		buffer[*pRx_counter] = USARTx->RDR;
+		// Reading USART_DR automatically clears the RXNE flag
+		(*pRx_counter)++;
+		if((*pRx_counter) >= BufferSize )
+			(*pRx_counter) = 0;
+	}
+}
+
+void USART2_IRQHandler(void) {
+	USART_IRQHandler(USART2, USART2_Buffer_Rx, &Rx2_Counter);
+
+	if (USART2_Buffer_Rx[Rx2_Counter - 1] == 0x74 || USART2_Buffer_Rx[Rx2_Counter - 1] == 0x54){
+		uint8_t buffer[] = {'t', 'e', 'm', 'p', ' ', 'u', 'n', 'a', 'v', 'a', 'i', 'l', 'a', 'b', 'l', 'e', '\n', 13};
+		USART_Write(USART2, buffer, 18);
+	}
+}
