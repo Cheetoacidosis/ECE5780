@@ -1,4 +1,5 @@
 #include "data.h"
+#include "FreeRTOS.h"
 
 void USART_Init(USART_TypeDef * USARTx) 
 {  
@@ -103,6 +104,15 @@ void USART_Init(USART_TypeDef * USARTx)
 	while ((USARTx->ISR & USART_ISR_REACK) == 0);
 }
 
+
+
+void USART_Write_BaseType(USART_TypeDef * USARTx, BaseType_t * buffer) {
+	uint8_t buff_array[4] = {(uint8_t)*buffer&0xF000, (uint8_t)*buffer&0x0F00, (uint8_t)*buffer&0x00F0, (uint8_t)*buffer&0x000F};
+	for (int i=0; i<4; i++) {
+		USART_Write(USARTx, &buff_array[i], 1);
+	}
+
+}
 
 void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, uint32_t nBytes)
 {

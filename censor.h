@@ -12,4 +12,6 @@ void USART1_IRQHandler();
 
 extern QueueHandle_t SensorQueueueueueueueueueueueueueueue;
 
+extern QueueHandle_t reading;
+
 #endif 

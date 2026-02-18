@@ -11,12 +11,12 @@ int main( void )
 	prvSetupHardware();
 	
 	//enable interrupts
-	NVIC_SetPriority(USART2_IRQn, 0);
+	NVIC_SetPriority(USART2_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 	NVIC_EnableIRQ(USART2_IRQn);
 	USART_Init(USART2);
 	
 	//enable interrupts
-	NVIC_SetPriority(USART1_IRQn, 0);
+	NVIC_SetPriority(USART1_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 	NVIC_EnableIRQ(USART1_IRQn);
 	USART_Init(USART1);
 		
