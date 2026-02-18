@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.43.1.0
 Copyright (C) 2025 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Wiley Forbush, USU, LIC=----
+License Information: Liz Olson, Utah State University, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.43.0.0
-Toolchain Path:  C:\Keil\ARM\ARMCLANG\Bin
+Toolchain Path:  C:\Users\Liz\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
 C Compiler:      ArmClang.exe V6.24
 Assembler:       Armasm.exe V6.24
 Linker/Locator:  ArmLink.exe V6.24
@@ -21,20 +21,16 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.1.0
 Dialog DLL:      TCM.DLL V1.56.6.0
  
 <h2>Project:</h2>
-C:\Users\A02394231\Documents\GitHub\ECE5780\Lab1-5780.uvprojx
-Project File Date:  02/10/2026
+C:\gitclones\ECE5780\Lab1-5780.uvprojx
+Project File Date:  02/17/2026
 
 <h2>Output:</h2>
-*** Using Compiler 'V6.24', folder: 'C:\Keil\ARM\ARMCLANG\Bin'
+*** Using Compiler 'V6.24', folder: 'C:\Users\Liz\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target_1'
-LEDtoggle.c(34): warning: unused variable 'ASS_CNT' [-Wunused-variable]
-   34 | static BaseType_t ASS_CNT = 0;
-      |                   ^~~~~~~
-1 warning generated.
-compiling LEDtoggle.c...
+compiling censor.c...
 linking...
-Program Size: Code=17080 RO-data=772 RW-data=8 ZI-data=13000  
-".\Objects\Lab1-5780.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=17176 RO-data=772 RW-data=8 ZI-data=13000  
+".\Objects\Lab1-5780.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -67,12 +63,12 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
   ./RTE/RTOS
   ./RTE/_Target_1
-  C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include
-  C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include
-  C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F
-  C:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include
-  C:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include
-  C:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+  C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include
+  C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include
+  C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F
+  C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include
+  C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include
+  C:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
@@ -90,19 +86,19 @@ Package Vendor: Keil
       Include file:  CMSIS/RTOS2/FreeRTOS/Config/FreeRTOSConfig.h
 
    * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@11.2.0
-      Include file:  Source/include/FreeRTOS.h
-      Include file:  Source/include/queue.h
-      Include file:  Source/include/semphr.h
-      Source file:   Source/queue.c
-      Source file:   Source/portable/GCC/ARM_CM4F/port.c
-      Include file:  Source/include/task.h
-      Source file:   Source/list.c
-      Source file:   Source/tasks.c
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
+      Source file:   Source/queue.c
+      Include file:  Source/include/queue.h
+      Include file:  Source/include/task.h
+      Source file:   Source/tasks.c
+      Include file:  Source/include/FreeRTOS.h
+      Include file:  Source/include/semphr.h
+      Source file:   Source/list.c
+      Source file:   Source/portable/GCC/ARM_CM4F/port.c
 
    * Component: ARM::RTOS&FreeRTOS:Event Groups@11.2.0
-      Source file:   Source/event_groups.c
       Include file:  Source/include/event_groups.h
+      Source file:   Source/event_groups.c
 
    * Component: ARM::RTOS&FreeRTOS:Heap&Heap_4@11.2.0
       Source file:   Source/portable/MemMang/heap_4.c
@@ -122,7 +118,7 @@ Package Vendor: Keil
       Source file:   MDK/Device/Source/ARM/STM32L4xx_DB_OPT.s
       Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/arm/startup_stm32l476xx.s
       Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

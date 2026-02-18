@@ -1,279 +1,279 @@
 Dependencies for Project 'Lab1-5780', Target 'Target_1': (DO NOT MODIFY !)
 CompilerVersion: 6240000::V6.24::ARMCLANG
-F (.\main.c)(0x698BEC51)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/main.o -MMD)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (LEDtoggle.h)(0x698BF153)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (data.h)(0x698BCF5A)
-I (stm32l476xx.h)(0x698BCF5A)
-I (censor.h)(0x698BF380)
-F (.\LEDtoggle.c)(0x698BF67F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/ledtoggle.o -MMD)
-I (LEDtoggle.h)(0x698BF153)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (data.h)(0x698BCF5A)
-I (stm32l476xx.h)(0x698BCF5A)
-I (censor.h)(0x698BF380)
-F (.\LEDtoggle.h)(0x698BF153)()
-F (.\data.c)(0x698BE6D3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/data.o -MMD)
-I (data.h)(0x698BCF5A)
-I (stm32l476xx.h)(0x698BCF5A)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (system_stm32l4xx.h)(0x698BCF5A)
-F (.\data.h)(0x698BCF5A)()
-F (.\censor.c)(0x698BF3C7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/censor.o -MMD)
-I (censor.h)(0x698BF380)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (data.h)(0x698BCF5A)
-I (stm32l476xx.h)(0x698BCF5A)
-F (.\censor.h)(0x698BF380)()
-F (.\my_queues.c)(0x698BF1DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/my_queues.o -MMD)
-I (my_queues.h)(0x698BF385)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (censor.h)(0x698BF380)
-I (data.h)(0x698BCF5A)
-I (stm32l476xx.h)(0x698BCF5A)
-I (LEDtoggle.h)(0x698BF153)
-F (.\my_queues.h)(0x698BF385)()
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/clib_os.c)(0x6980FD5E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/clib_os.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\semphr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c)(0x6980FD5E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/cmsis_os2.o -MMD)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\cmsis_os2.h)(0x68BF0923)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\cmsis_compiler.h)(0x68BF0921)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\cmsis_armclang.h)(0x68BF0921)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\os_tick.h)(0x68BF0923)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\event_groups.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\semphr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_os2.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Source/os_systick.c)(0x68BF0923)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/os_systick.o -MMD)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\os_tick.h)(0x68BF0923)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-F (RTE/Device/STM32L476RGTx/startup_stm32l476xx.s)(0x698BCF5A)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"STM32L476xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32l476xx.o)
-F (RTE/Device/STM32L476RGTx/system_stm32l4xx.c)(0x698BCF5A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/system_stm32l4xx.o -MMD)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c)(0x6980FD5E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/freertos_evr.o -MMD)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/event_groups.c)(0x6980FD5E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/event_groups.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\event_groups.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/list.c)(0x6980FD5E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/list.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F/port.c)(0x6980FD5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/port.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/MemMang/heap_4.c)(0x6980FD5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/heap_4.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/queue.c)(0x6980FD5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/queue.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/tasks.c)(0x6980FD5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/tasks.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\stack_macros.h)(0x6980FD5E)
-F (C:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/timers.c)(0x6980FD5F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Keil/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Keil/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Keil/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/timers.o -MMD)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6980FD5E)
-I (RTE\RTOS\FreeRTOSConfig.h)(0x698BCF5A)
-I (RTE\_Target_1\RTE_Components.h)(0x698BCF5A)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x68BF0921)
-I (C:\Keil\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x6980FDD4)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6980FD5F)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6980FD5E)
-I (C:\Keil\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6980FD5E)
-F (RTE/RTOS/FreeRTOSConfig.h)(0x698BCF5A)()
+F (.\main.c)(0x69950E66)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/main.o -MMD)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (LEDtoggle.h)(0x699508BD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (data.h)(0x698BDF44)
+I (stm32l476xx.h)(0x698BDF44)
+I (censor.h)(0x699508BE)
+F (.\LEDtoggle.c)(0x69950EDD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/ledtoggle.o -MMD)
+I (LEDtoggle.h)(0x699508BD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (data.h)(0x698BDF44)
+I (stm32l476xx.h)(0x698BDF44)
+I (censor.h)(0x699508BE)
+F (.\LEDtoggle.h)(0x699508BD)()
+F (.\data.c)(0x699508BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/data.o -MMD)
+I (data.h)(0x698BDF44)
+I (stm32l476xx.h)(0x698BDF44)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (system_stm32l4xx.h)(0x698BDF44)
+F (.\data.h)(0x698BDF44)()
+F (.\censor.c)(0x69951028)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/censor.o -MMD)
+I (censor.h)(0x699508BE)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (data.h)(0x698BDF44)
+I (stm32l476xx.h)(0x698BDF44)
+F (.\censor.h)(0x699508BE)()
+F (.\my_queues.c)(0x699508BE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/my_queues.o -MMD)
+I (my_queues.h)(0x699508BE)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (censor.h)(0x699508BE)
+I (data.h)(0x698BDF44)
+I (stm32l476xx.h)(0x698BDF44)
+I (LEDtoggle.h)(0x699508BD)
+F (.\my_queues.h)(0x699508BE)()
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/clib_os.c)(0x6966E2F1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/clib_os.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\semphr.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c)(0x6966E2F1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/cmsis_os2.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\cmsis_os2.h)(0x695C90C5)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\cmsis_compiler.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\cmsis_armclang.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\os_tick.h)(0x695C90C5)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\event_groups.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\semphr.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_mpool.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_os2.h)(0x6966E2F1)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Source/os_systick.c)(0x695C90C5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/os_systick.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\RTOS2\Include\os_tick.h)(0x695C90C5)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+F (RTE/Device/STM32L476RGTx/startup_stm32l476xx.s)(0x698BDF44)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"STM32L476xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32l476xx.o)
+F (RTE/Device/STM32L476RGTx/system_stm32l4xx.c)(0x698BDF44)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/system_stm32l4xx.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c)(0x6966E2F1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/freertos_evr.o -MMD)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/event_groups.c)(0x6966E2F2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/event_groups.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\event_groups.h)(0x6966E2F2)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/list.c)(0x6966E2F3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/list.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F/port.c)(0x6966E2F8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/port.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/MemMang/heap_4.c)(0x6966E2FD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/heap_4.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/queue.c)(0x6966E302)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/queue.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/tasks.c)(0x6966E302)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/tasks.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\stack_macros.h)(0x6966E2F3)
+F (C:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/timers.c)(0x6966E303)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/RTOS-I./RTE/_Target_1-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/CMSIS/RTOS2/FreeRTOS/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS-FreeRTOS/11.2.0/Source/portable/GCC/ARM_CM4F-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/RTOS2/Include-IC:/Users/Liz/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="543" -DSTM32L476xx -D_RTE_-o ./objects/timers.o -MMD)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\FreeRTOS.h)(0x6966E2F2)
+I (RTE\RTOS\FreeRTOSConfig.h)(0x698BDF44)
+I (RTE\_Target_1\RTE_Components.h)(0x69950931)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l476xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm4.h)(0x695C90A1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\Keil\STM32L4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h)(0x69654DE9)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h)(0x6966E2F1)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\projdefs.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\portable.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\deprecated_definitions.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\portable\GCC\ARM_CM4F\portmacro.h)(0x6966E2F8)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\mpu_wrappers.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\task.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\list.h)(0x6966E2F2)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\queue.h)(0x6966E2F3)
+I (C:\Users\Liz\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\11.2.0\Source\include\timers.h)(0x6966E2F3)
+F (RTE/RTOS/FreeRTOSConfig.h)(0x698BDF44)()

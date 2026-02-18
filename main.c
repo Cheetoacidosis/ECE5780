@@ -19,7 +19,7 @@ int main( void )
 	NVIC_SetPriority(USART1_IRQn, 0);
 	NVIC_EnableIRQ(USART1_IRQn);
 	USART_Init(USART1);
-	
+		
 	if (queue_state != NULL) {
 		/* --- APPLICATION TASKS CAN BE CREATED HERE --- */
 		TaskHandle_t xHandle = NULL;

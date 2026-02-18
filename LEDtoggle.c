@@ -286,7 +286,7 @@ void USART2_IRQHandler(){
 		if((pRx_counter) >= 1 )
 			(pRx_counter) = 0;
 	}
-	
+	USART_Write(USART2, buffer, 1);
 	if (buffer[pRx_counter] == 0x74) {	//'t' in ASCII
 		BaseType_t torp = buffer[pRx_counter];
 		xQueueSendToBackFromISR(SensorQueueueueueueueueueueueueueueue, &torp, NULL);
