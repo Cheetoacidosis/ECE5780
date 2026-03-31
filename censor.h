@@ -10,7 +10,7 @@ void xUS100SensorRead();
 
 void USART1_IRQHandler();
 
-extern QueueHandle_t SensorQueueueueueueueueueueueueueueue;
+extern QueueHandle_t SensorQueue;
 
 extern QueueHandle_t reading;
 
