@@ -2,10 +2,10 @@
 
 BaseType_t SetupQueue() {
 	xStateQueue = xQueueCreate(1, sizeof(BaseType_t));
-	SensorQueueueueueueueueueueueueueueue = xQueueCreate(1, sizeof(BaseType_t));
+	SensorQueue = xQueueCreate(1, sizeof(BaseType_t));
 	reading = xQueueCreate(1, sizeof(BaseType_t));
 	
-	if (xStateQueue != NULL && SensorQueueueueueueueueueueueueueueue != NULL && reading != NULL){
+	if (xStateQueue != NULL && SensorQueue != NULL && reading != NULL){
 		BaseType_t initial_state = 1;
 		
 		xQueueOverwrite(xStateQueue, (void *) &initial_state);

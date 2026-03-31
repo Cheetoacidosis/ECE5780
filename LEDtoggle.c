@@ -289,7 +289,7 @@ void USART2_IRQHandler(){
 	//USART_Write(USART2, buffer, 1);
 	if (buffer[pRx_counter] == 't' || buffer[pRx_counter] == 'p') {
 		BaseType_t torp = buffer[pRx_counter];
-		xQueueSendToBackFromISR(SensorQueueueueueueueueueueueueueueue, &torp, NULL);
+		xQueueSendToBackFromISR(SensorQueue, &torp, NULL);
 	}
 	else {
 		BaseType_t frequency_index = buffer[pRx_counter] - 0x61;

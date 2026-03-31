@@ -2,7 +2,7 @@
 
 //Kinda works in tandem with data.c, because we need UART tyvm
 
-QueueHandle_t SensorQueueueueueueueueueueueueueueue;
+QueueHandle_t SensorQueue;
 QueueHandle_t reading;
 
 //Read the temp-er-at-ure
