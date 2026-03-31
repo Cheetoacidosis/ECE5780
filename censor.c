@@ -12,7 +12,7 @@ void xUS100SensorRead(){
 	
 	for (;;){
 		//Wait indefinitely until data in queue
-		xQueueReceive( SensorQueueueueueueueueueueueueueueue,
+		xQueueReceive( SensorQueue,
 			&buffer,
 			portMAX_DELAY);
 		
