@@ -277,11 +277,12 @@ void bouncyBoi() {
       xQueueOverwrite(xStateQueue, &new_state);
 				
 				// Update ARR on every button press
-//				ASS_CNT++;
-//				if (ASS_CNT >= 8){
-//					ASS_CNT = 0;
-//				}
-//				TIM4->ARR = ARR_LUT[ASS_CNT];
+				//updates on EVERY button press, skips sounds in audio
+				ASS_CNT++;
+				if (ASS_CNT >= 25){
+					ASS_CNT = 0;
+				}
+				TIM4->ARR = ARR_LUT[ASS_CNT];
 				
       //Return to waiting
       debouncer_state = WAIT;
@@ -309,9 +310,9 @@ void USART2_IRQHandler(){
 		xQueueSendToBackFromISR(SensorQueue, &torp, NULL);
 	}
 	else {
-		BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
-		TIM4->ARR = ARR_LUT[frequency_index];
-			//TIM4->ARR = ARR_LUT[0];	
+		//BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
+		//TIM4->ARR = ARR_LUT[frequency_index];
+		//TIM4->ARR = ARR_LUT[0];	
 	}
 }
 
