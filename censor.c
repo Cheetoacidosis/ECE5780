@@ -53,17 +53,16 @@ void xUS100SensorRead(){
 			
 			float f_dist = dist[1] + (dist[0] << 8);
 			f_dist /= 10;
-			f_dist /= 2.54;
 			
 			uint8_t hundreds = (uint8_t)(f_dist / 100);
 			uint8_t tens = ((uint8_t)(f_dist / 10)) % 10;
-			uint8_t ones = ((uint8_t)(f_dist) % 10);
+			uint8_t ones = ((uint8_t)(f_dist)) % 10;
 			
 			hundreds += '0';
 			tens += '0';
 			ones += '0';
 			
-			uint8_t message[] = {hundreds, tens, ones, ' ', 'i', 'n', 'c', 'h', 'e', 's', '\n', '\r'};
+			uint8_t message[] = {hundreds, tens, ones, ' ', 'm', 'm', '\n', '\r'};
 			
 			USART_Write(USART2, message, sizeof(message));		
 		}
