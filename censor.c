@@ -88,10 +88,26 @@ void USART1_IRQHandler(){
 	
 	BaseType_t lengthened_buffer = (BaseType_t) ((buffer[0] & 0x00FF) + ((buffer[1] << 8) & 0xFF00));
 	xQueueSendToBackFromISR(reading, &lengthened_buffer, NULL);
-	//uint8_t steve = 0;
-	//USART_Write(USART2, buffer, 2);
-	
+
 	//Parse the data
 	//Eventually this will add the value to a queue, and defer parsing to a task
 	
+}
+
+
+void USART3_IRQHandler(){
+    //Copied from USART1 handler
+    uint8_t buffer[2] = {};
+	BaseType_t pRx_counter = 0;
+		
+	for (int i=0; i < 2; i++) {
+		if(USART3->ISR & USART_ISR_RXNE) { // Received data
+			buffer[pRx_counter] = USART3->RDR;
+			// Reading USART_DR automatically clears the RXNE flag
+			(pRx_counter)++;
+			if((pRx_counter) >= 2) {
+				//(pRx_counter) = 0;
+			}
+		}
+	}
 }
