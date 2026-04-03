@@ -8,43 +8,43 @@ uint32_t Rx1_Counter = 0, Rx2_Counter = 0;
 void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes);
 void USART_Init(USART_TypeDef * USARTx);
 
-int main(void) {
-	//enable GPIO clock and configure Tx pin and the Rx pin as:
-	//alternate function, high speed, push-pull, pull-up
+// int main(void) {
+// 	//enable GPIO clock and configure Tx pin and the Rx pin as:
+// 	//alternate function, high speed, push-pull, pull-up
 	
-	RCC->AHB2ENR |=RCC_AHB2ENR_GPIOAEN;
+// 	RCC->AHB2ENR |=RCC_AHB2ENR_GPIOAEN;
 	
-	GPIOA->MODER &= ~(0xf << (4));
-	GPIOA->MODER |= (0xa << (4));
+// 	GPIOA->MODER &= ~(0xf << (4));
+// 	GPIOA->MODER |= (0xa << (4));
 	
-	GPIOA->AFR[0] |= (0x77 << (8));
+// 	GPIOA->AFR[0] |= (0x77 << (8));
 	
-	GPIOA->OSPEEDR |= (0xf << 4);
+// 	GPIOA->OSPEEDR |= (0xf << 4);
 	
-	GPIOA->PUPDR &= ~(0xf << 4);
-	GPIOA->PUPDR |= (0x5 << 4);
+// 	GPIOA->PUPDR &= ~(0xf << 4);
+// 	GPIOA->PUPDR |= (0x5 << 4);
 	
-	GPIOA->OTYPER &= ~(0x3 << 2);
+// 	GPIOA->OTYPER &= ~(0x3 << 2);
 	
-	RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
+// 	RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
 	
-	RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
-	RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
+// 	RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
+// 	RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
 	
-	//enable interrupts
-	USART2->CR1 |= USART_CR1_RXNEIE;
-	USART2->CR1 &= ~USART_CR1_TXEIE;
-	NVIC_SetPriority(USART2_IRQn, 0);
-	NVIC_EnableIRQ(USART2_IRQn);
+// 	//enable interrupts
+// 	USART2->CR1 |= USART_CR1_RXNEIE;
+// 	USART2->CR1 &= ~USART_CR1_TXEIE;
+// 	NVIC_SetPriority(USART2_IRQn, 0);
+// 	NVIC_EnableIRQ(USART2_IRQn);
 	
-	USART_Init(USART2);
+// 	USART_Init(USART2);
 	
-	uint8_t send[2] = {0x74, 0x76};
+// 	uint8_t send[2] = {0x74, 0x76};
 	
-	USART_Write(USART2, send, 2);
+// 	USART_Write(USART2, send, 2);
 	
-	while(1);
-}
+// 	while(1);
+// }
 
 
 void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, int nBytes) {
