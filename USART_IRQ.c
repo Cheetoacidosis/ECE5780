@@ -1,3 +1,4 @@
+/*
 #include "stm32l476xx.h"
 
 #define BufferSize 32
@@ -111,3 +112,4 @@ void USART_Init(USART_TypeDef * USARTx) {
 	//wait for USART ready for reception
 	while((USARTx->ISR & USART_ISR_REACK) == 0);
 }
+*/

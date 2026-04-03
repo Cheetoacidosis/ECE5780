@@ -6,6 +6,7 @@ void USART_Init(USART_TypeDef * USARTx)
 	
 	if (USARTx == USART2) {
 		//Set up for USART2
+        // USB / Computer connection
 		GPIOA->MODER &= ~(0xf << (4));
 		GPIOA->MODER |= (0xa << (4));
 		
@@ -28,10 +29,11 @@ void USART_Init(USART_TypeDef * USARTx)
 
 	} 
 	//Setup for USART1
+    // Prox Sensor 1
 	else if (USARTx == USART1) {
 	//PA  
-		//Tx 9 
-		//Rx 10
+		//Tx PA9 
+		//Rx PA10
 		// put them into AF mode
 		GPIOA -> MODER &= ~(0b11 << (9*2));
 		GPIOA -> MODER &= ~(0b11 << (10*2));
@@ -60,7 +62,42 @@ void USART_Init(USART_TypeDef * USARTx)
 		USART1->CR1 |= USART_CR1_RXNEIE;
 		USART1->CR1 &= ~USART_CR1_TXEIE;
 	}
+    // UART 3
+    // Prox Sensor 2
+    else if (USARTx == USART3){
+        //Tx PB10
+        //Rx PB11
+        // Enable da GPIO clock
+        RCC->AHB2ENR |=RCC_AHB2ENR_GPIOBEN;
 
+        // put them into AF mode
+		GPIOB -> MODER &= ~(0b11 << (10*2));
+		GPIOB -> MODER &= ~(0b11 << (11*2));
+		GPIOB -> MODER |= (0b10 << (10*2));
+		GPIOB -> MODER |= (0b10 << (11*2));
+		
+		//Configure AF mode. 7 is USART rx/tx
+		GPIOB->AFR[1] |= (0x77 << (4*2));
+		
+		//VERY HIGH SPEEEEEEED
+		GPIOB->OSPEEDR |= (0xf << 2*10);
+		
+		//Pull=up
+		GPIOB->PUPDR &= ~(0xf << 2*10);
+		GPIOB->PUPDR |= (0x5 << 2*10);
+		
+		//Push-pull
+		GPIOB->OTYPER &= ~(0x3 << 10);
+		
+		//Clock!!!
+		RCC->APB2ENR |= RCC_APB2ENR_USART3EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART3SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART3SEL_0;
+
+		USART3->CR1 |= USART_CR1_RXNEIE;
+		USART3->CR1 &= ~USART_CR1_TXEIE;
+    }
 
 	
 	// Disable USART 

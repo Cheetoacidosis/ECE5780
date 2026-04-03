@@ -10,16 +10,21 @@ int main( void )
 	/* Perform any hardware setup necessary. */
 	prvSetupHardware();
 	
-	//enable interrupts
+	//enable interrupts - USB
 	NVIC_SetPriority(USART2_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 	NVIC_EnableIRQ(USART2_IRQn);
 	USART_Init(USART2);
 	
-	//enable interrupts
+	//enable interrupts - Prox Sensor 1
 	NVIC_SetPriority(USART1_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 	NVIC_EnableIRQ(USART1_IRQn);
 	USART_Init(USART1);
 		
+    //enable interrupts - Prox Sensor 2
+	NVIC_SetPriority(USART3_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
+	NVIC_EnableIRQ(USART3_IRQn);
+	USART_Init(USART3);
+
 	if (queue_state != NULL) {
 		/* --- APPLICATION TASKS CAN BE CREATED HERE --- */
 		TaskHandle_t xHandle = NULL;
