@@ -20,7 +20,7 @@ void xUS100SensorRead(){
 		if (buffer == 't') {
 			uint8_t command = 0x50;
 			USART_Write(USART1, &command, 1);
-			
+			   
 			BaseType_t temp = 0;
 			xQueueReceive(reading, &temp, portMAX_DELAY);
 			
@@ -62,7 +62,7 @@ void xUS100SensorRead(){
 			tens += '0';
 			ones += '0';
 			
-			uint8_t message[] = {hundreds, tens, ones, ' ', 'm', 'm', '\n', '\r'};
+			uint8_t message[] = {hundreds, tens, ones, ' ', 'c', 'm', '\n', '\r'};
 			
 			USART_Write(USART2, message, sizeof(message));		
 		}
