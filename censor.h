@@ -12,4 +12,6 @@ extern QueueHandle_t SensorQueue;
 
 extern QueueHandle_t reading;
 
+extern QueueHandle_t reading_USART3;
+
 #endif 
