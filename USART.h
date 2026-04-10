@@ -6,7 +6,9 @@
 #include "queue.h"
 #include "data.h"
 
-void xUS100SensorRead();
+void USART1_IRQHandler();
+
+void USART3_IRQHandler();
 
 extern QueueHandle_t SensorQueue;
 
