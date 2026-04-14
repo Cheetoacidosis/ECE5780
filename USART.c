@@ -4,8 +4,183 @@
 #include "FreeRTOS.h"
 #include "FreeRTOSConfig.h"
 #include "queue.h"
-#include "data.h"
 
+void USART_Init(USART_TypeDef * USARTx){  
+	
+	if (USARTx == USART2) {
+		//Set up for USART2
+        // USB / Computer connection
+		GPIOA->MODER &= ~(0xf << (4));
+		GPIOA->MODER |= (0xa << (4));
+		
+		GPIOA->AFR[0] |= (0x77 << (8));
+		
+		GPIOA->OSPEEDR |= (0xf << 4);
+		
+		GPIOA->PUPDR &= ~(0xf << 4);
+		GPIOA->PUPDR |= (0x5 << 4);
+		
+		GPIOA->OTYPER &= ~(0x3 << 2);
+		
+		RCC->APB1ENR1 |= RCC_APB1ENR1_USART2EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART2SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART2SEL_0;
+	
+		USART2->CR1 |= USART_CR1_RXNEIE;
+		USART2->CR1 &= ~USART_CR1_TXEIE;
+
+	} 
+	//Setup for USART1
+    // Prox Sensor 1
+	else if (USARTx == USART1) {
+	//PA  
+		//Tx PA9 
+		//Rx PA10
+		// put them into AF mode
+		GPIOA -> MODER &= ~(0b11 << (9*2));
+		GPIOA -> MODER &= ~(0b11 << (10*2));
+		GPIOA -> MODER |= (0b10 << (9*2));
+		GPIOA -> MODER |= (0b10 << (10*2));
+		
+		//Configure AF mode. 7 is USART rx/tx
+		GPIOA->AFR[1] |= (0x77 << (4*1));
+		
+		//VERY HIGH SPEEEEEEED
+		GPIOA->OSPEEDR |= (0xf << 2*9);
+		
+		//Pull=up
+		GPIOA->PUPDR &= ~(0xf << 2*9);
+		GPIOA->PUPDR |= (0x5 << 2*9);
+		
+		//Push-pull
+		GPIOA->OTYPER &= ~(0x3 << 9);
+		
+		//Clock!!!
+		RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART1SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART1SEL_0;
+
+		USART1->CR1 |= USART_CR1_RXNEIE;
+		USART1->CR1 &= ~USART_CR1_TXEIE;
+	}
+    // UART 3
+    // Prox Sensor 2
+    else if (USARTx == USART3){
+        //Tx PB10
+        //Rx PB11
+        // Enable da GPIO clock
+        RCC->AHB2ENR |=RCC_AHB2ENR_GPIOBEN;
+
+        // put them into AF mode
+		GPIOB -> MODER &= ~(0b11 << (10*2));
+		GPIOB -> MODER &= ~(0b11 << (11*2));
+		GPIOB -> MODER |= (0b10 << (10*2));
+		GPIOB -> MODER |= (0b10 << (11*2));
+		
+		//Configure AF mode. 7 is USART rx/tx
+		GPIOB->AFR[1] |= (0x77 << (4*2));
+		
+		//VERY HIGH SPEEEEEEED
+		GPIOB->OSPEEDR |= (0xf << 2*10);
+		
+		//Pull=up
+		GPIOB->PUPDR &= ~(0xf << 2*10);
+		GPIOB->PUPDR |= (0x5 << 2*10);
+		
+		//Push-pull
+		GPIOB->OTYPER &= ~(0x3 << 10);
+		
+		//Clock!!!
+		RCC->APB1ENR1 |= RCC_APB1ENR1_USART3EN;
+		
+		RCC->CCIPR &= ~RCC_CCIPR_USART3SEL;
+		RCC->CCIPR |= RCC_CCIPR_USART3SEL_0;
+
+		USART3->CR1 |= USART_CR1_RXNEIE;
+		USART3->CR1 &= ~USART_CR1_TXEIE;
+    }
+
+	
+	// Disable USART 
+	USARTx->CR1 &= ~USART_CR1_UE; 
+	
+	// Set data Length to 8 bits 
+	// 00 = 8 data bits, 01 = 9 data bits, 10 = 7 data bits 
+	USARTx->CR1 &= ~USART_CR1_M;
+	
+	// Select 1 stop bit 
+	// 00 = 1 stop bit 01 = 0.s stop bit 
+	// 10 = 2 Stop bits 11 = 1.5 Stop bit 
+	USARTx->CR2 &= ~USART_CR2_STOP; 
+	
+	// Set parity control as no parity 
+	// 0 = no parity, 
+	// 1 = parity enabled (then, program PS bit to select Even or Odd parity) 
+	USARTx->CR1 &= ~USART_CR1_PCE;
+	
+	// Oversampling by 16 
+	// 0 = oversampling by 16, 1 = oversampling by 8 
+	USARTx->CR1 &= ~USART_CR1_OVER8;
+	
+	// Set Baud rate to 9600 using 4 MHz frequency 
+	// See Example 1 in Section 22.1.2 
+	// USARTx->BRR = 0x683; 
+	USARTx->BRR = 0x1A1; 
+	
+	// Enable transmission and reception 
+	USARTx->CR1 |= (USART_CR1_TE | USART_CR1_RE); 
+	
+	// Enable USART 
+	USARTx->CR1 |= USART_CR1_UE; 
+	
+	// Verify that USART is ready for transmission 
+	// TEACK: Transmit enable acknowledge flag. Hardware sets or resets it. 
+	while ((USARTx->ISR & USART_ISR_TEACK) == 0); 
+	
+	// Verify that USART is ready for reception 
+	// REACK: Receive enable acknowledge flag. Hardware sets or resets it. 
+	while ((USARTx->ISR & USART_ISR_REACK) == 0);
+}
+
+void USART_Write_BaseType(USART_TypeDef * USARTx, BaseType_t * buffer){
+	uint8_t buff_array[4] = {(uint8_t)*buffer&0xF000, (uint8_t)*buffer&0x0F00, (uint8_t)*buffer&0x00F0, (uint8_t)*buffer&0x000F};
+	for (int i=0; i<4; i++) {
+		USART_Write(USARTx, &buff_array[i], 1);
+	}
+
+}
+
+void USART_Write(USART_TypeDef * USARTx, uint8_t * buffer, uint32_t nBytes){
+	uint32_t i;
+	
+	for(i = 0; i < nBytes; i++)
+	{
+		// wait until TXE (TX empty) is set
+		// writing USART_DR automatically clears the TXE flag
+		while(!(USARTx->ISR & USART_ISR_TXE));
+		USARTx->TDR = (buffer[i] & 0xFF);
+	}
+	
+	while(!(USARTx->ISR & USART_ISR_TC));			//wait until TC bit is set
+	USARTx->ICR = USART_ICR_TCCF;
+}
+
+uint32_t USART_Read(USART_TypeDef * USARTx, uint8_t * buffer, uint32_t nBytes){
+	uint32_t i;
+	
+	for(i = 0; i < nBytes; i++) buffer[i] = USART_ReadByte(USARTx);
+	
+	return nBytes;
+}
+
+uint8_t USART_ReadByte(USART_TypeDef * USARTx){
+	while(!(USARTx->ISR & USART_ISR_RXNE));
+	return (uint32_t)USARTx->RDR;
+}
+
+// This is for one sensor
 void USART1_IRQHandler(){
 	uint8_t buffer[2] = {};
 	BaseType_t pRx_counter = 0;
@@ -28,7 +203,7 @@ void USART1_IRQHandler(){
 	//Eventually this will add the value to a queue, and defer parsing to a task
 }
 
-
+// This is for the other sensor
 void USART3_IRQHandler(){
 	//Copied from USART1 handler
 	uint8_t buffer[2] = {};
@@ -48,4 +223,28 @@ void USART3_IRQHandler(){
 	BaseType_t lengthened_buffer = (BaseType_t) ((buffer[0] & 0x00FF) + ((buffer[1] << 8) & 0xFF00));
 	xQueueSendToBackFromISR(reading_USART3, &lengthened_buffer, NULL);
 	
+}
+
+// This is for the computer/PuTTY
+void USART2_IRQHandler(){
+	uint8_t buffer[sizeof(BaseType_t)] = {};
+	BaseType_t pRx_counter = 0;
+	
+	if(USART2->ISR & USART_ISR_RXNE) { // Received data
+		buffer[pRx_counter] = USART2->RDR;
+		// Reading USART_DR automatically clears the RXNE flag
+		(pRx_counter)++;
+		if((pRx_counter) >= 1 )
+			(pRx_counter) = 0;
+	}
+	//USART_Write(USART2, buffer, 1);
+	if (buffer[pRx_counter] == 't' || buffer[pRx_counter] == 'p') {
+		BaseType_t torp = buffer[pRx_counter];
+		xQueueSendToBackFromISR(SensorQueue, &torp, NULL);
+	}
+	else {
+		//BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
+		//TIM4->ARR = ARR_LUT[frequency_index];
+		//TIM4->ARR = ARR_LUT[0];	
+	}
 }

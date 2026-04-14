@@ -1,4 +1,5 @@
 #include "censor.h"
+#include "USART.h"
 
 //Kinda works in tandem with data.c, because we need UART tyvm
 

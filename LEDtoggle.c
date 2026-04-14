@@ -1,6 +1,6 @@
 #include "LEDtoggle.h"
 #include "queue.h"
-#include "data.h"
+#include "USART.h"
 #include "censor.h"
 
 //BaseType_t LEDstate = 0;
@@ -106,12 +106,7 @@ void prvSetupHardware(){
 		
 		// Enable timer 4 interrupt controller
 		NVIC_EnableIRQ(TIM4_IRQn);
-		
-		
-	
-	
 
-	
 	//DAC setup
 		//Enable DAC clock
 		RCC->APB1ENR1 |= RCC_APB1ENR1_DAC1EN;
@@ -129,25 +124,6 @@ void prvSetupHardware(){
 		GPIOA->MODER |= 3U<<(2*3);
 
 }
-
-
-//BaseType_t SetupQueue() {
-//	xStateQueue = xQueueCreate(1, sizeof(BaseType_t));
-//	//xFrequencyQueue = xQueueCreate(1, 2);
-//	
-//	if (xStateQueue != NULL){
-//		//uint8_t initial_state = 1;
-//		BaseType_t initial_state = 1;
-//		//char initial_freq = 1;
-//		
-//		xQueueOverwrite(xStateQueue, (void *) &initial_state);
-//		//xQueueOverwrite(xFrequencyQueue, &initial_freq);
-//		return 1;
-//	}
-//	else {
-//		return NULL; // In theory, will return NULL if either of the queues fails to create
-//	}
-//}
 
 void TIM4_IRQHandler() {
 	
@@ -292,35 +268,3 @@ void bouncyBoi() {
   }
   
 }
-
-void USART2_IRQHandler(){
-	uint8_t buffer[sizeof(BaseType_t)] = {};
-	BaseType_t pRx_counter = 0;
-	
-	if(USART2->ISR & USART_ISR_RXNE) { // Received data
-		buffer[pRx_counter] = USART2->RDR;
-		// Reading USART_DR automatically clears the RXNE flag
-		(pRx_counter)++;
-		if((pRx_counter) >= 1 )
-			(pRx_counter) = 0;
-	}
-	//USART_Write(USART2, buffer, 1);
-	if (buffer[pRx_counter] == 't' || buffer[pRx_counter] == 'p') {
-		BaseType_t torp = buffer[pRx_counter];
-		xQueueSendToBackFromISR(SensorQueue, &torp, NULL);
-	}
-	else {
-		//BaseType_t frequency_index = buffer[pRx_counter] - 0x61;
-		//TIM4->ARR = ARR_LUT[frequency_index];
-		//TIM4->ARR = ARR_LUT[0];	
-	}
-}
-
-//void USART2_IRQHandler(void) {
-//	USART_IRQHandler(sizeof(BaseType_t), &Rx2_Counter);
-
-//	if (USART2_Buffer_Rx[Rx2_Counter - 1] == 0x74 || USART2_Buffer_Rx[Rx2_Counter - 1] == 0x54){
-//		uint8_t buffer[] = {'t', 'e', 'm', 'p', ' ', 'u', 'n', 'a', 'v', 'a', 'i', 'l', 'a', 'b', 'l', 'e', '\n', 13};
-//		USART_Write(USART2, buffer, 18);
-//	}
-//}
