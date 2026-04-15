@@ -101,7 +101,8 @@ void prvSetupHardware(){
 		TIM4->CR1 |= 0x0001;
 		
 		// St priority of timer 4 interrupt to 1
-		NVIC_SetPriority(TIM4_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
+		//When set to anything other than 0, the sound becomes convoluted
+		NVIC_SetPriority(TIM4_IRQn, 1);
 		
 		// Enable timer 4 interrupt controller
 		NVIC_EnableIRQ(TIM4_IRQn);
@@ -132,21 +133,20 @@ void TIM4_IRQHandler() {
 			SLUT_CNT = 0;
 		}
 		
-		uint16_t volume = 0;
-		xQueuePeekFromISR(vol_peek_queue, &volume);
-		
-		volume -= 5;
-		
-		if (volume < 0) {
-			volume = 0;
-		}
-		else if (volume > 7) {
-			volume = 7;
-		}
+//		uint16_t volume = 0;
+//		xQueuePeekFromISR(vol_peek_queue, &volume);
+//		
+//		volume -= 5;
+//		
+//		if (volume < 0) {
+//			volume = 0;
+//		}
+//		else if (volume > 7) {
+//			volume = 7;
+//		}
 		
 		//lookup SLUT, feed to DAC
-		DAC->DHR12R1 = volume * SLUT[SLUT_CNT];
-	
+		DAC->DHR12R1 = SLUT[SLUT_CNT];
 
 	//Clear update interrupt flag (UIF)
 	if ((TIM4->SR & TIM_SR_UIF) != 0) {
