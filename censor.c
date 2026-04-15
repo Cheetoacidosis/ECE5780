@@ -4,8 +4,10 @@
 //Kinda works in tandem with data.c, because we need UART tyvm
 
 QueueHandle_t SensorQueue;
-QueueHandle_t reading;
-QueueHandle_t reading_USART3;
+QueueHandle_t frequency_queue;
+QueueHandle_t volume_queue;
+QueueHandle_t freq_peek_queue;
+QueueHandle_t vol_peek_queue;
 
 //Read the temp-er-at-ure
 void xUS100SensorRead(){
@@ -24,11 +26,14 @@ void xUS100SensorRead(){
 			USART_Write(USART1, &command, 1);
 			
 			BaseType_t dist[2] = {};
-			xQueueReceive(reading, &dist[0], portMAX_DELAY);
-			xQueueReceive(reading, &dist[1], portMAX_DELAY);	
+			xQueueReceive(frequency_queue, &dist[0], portMAX_DELAY);
+			xQueueReceive(frequency_queue, &dist[1], portMAX_DELAY);
 			
 			float f_dist = dist[1] + (dist[0] << 8);
 			f_dist /= 10;
+				
+			uint16_t dist_as_int = (uint16_t) f_dist;
+			xQueueOverwrite(freq_peek_queue, &dist_as_int);
 			
 			uint8_t hundreds = (uint8_t)(f_dist / 100);
 			uint8_t tens = ((uint8_t)(f_dist / 10)) % 10;
@@ -47,11 +52,14 @@ void xUS100SensorRead(){
 			USART_Write(USART3, &command, 1);
 			
 			BaseType_t dist[2] = {};
-			xQueueReceive(reading_USART3, &dist[0], portMAX_DELAY);
-			xQueueReceive(reading_USART3, &dist[1], portMAX_DELAY);	
+			xQueueReceive(volume_queue, &dist[0], portMAX_DELAY);
+			xQueueReceive(volume_queue, &dist[1], portMAX_DELAY);	
 			
 			float f_dist = dist[1] + (dist[0] << 8);
 			f_dist /= 10;
+				
+			uint16_t dist_as_int = (uint16_t) f_dist;
+			xQueueOverwrite(vol_peek_queue, &dist_as_int);
 			
 			uint8_t hundreds = (uint8_t)(f_dist / 100);
 			uint8_t tens = ((uint8_t)(f_dist / 10)) % 10;

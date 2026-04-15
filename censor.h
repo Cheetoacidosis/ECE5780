@@ -9,7 +9,9 @@
 void xUS100SensorRead();
 
 extern QueueHandle_t SensorQueue;
-extern QueueHandle_t reading;
-extern QueueHandle_t reading_USART3;
+extern QueueHandle_t frequency_queue;
+extern QueueHandle_t volume_queue;
+extern QueueHandle_t freq_peek_queue;
+extern QueueHandle_t vol_peek_queue;
 
 #endif 

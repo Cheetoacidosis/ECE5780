@@ -52,6 +52,14 @@ int main( void )
 									2,
 									&xHandle
 								);
+								
+		xTaskCreate( change_frequency,
+									"Change the frequency of the speaker",
+									configMINIMAL_STACK_SIZE,
+									NULL,
+									2,
+									&xHandle
+								);
 			
 		/* Start the created tasks running. */
 		vTaskStartScheduler();

@@ -8,14 +8,14 @@ QueueHandle_t xStateQueue;
 
 //Sine lookup table
 const BaseType_t SLUT[64] = {
-		0x800, 0x8c8, 0x98f, 0xa52, 0xb0f, 0xbc5, 0xc71, 0xd12,
-		0xda7, 0xe2e, 0xea6, 0xf0d, 0xf63, 0xfa7, 0xfd8, 0xff5,
-		0xfff, 0xff5, 0xfd8, 0xfa7, 0xf63, 0xf0d, 0xea6, 0xe2e,
-		0xda7, 0xd12, 0xc71, 0xbc5, 0xb0f, 0xa52, 0x98f, 0x8c8,
-		0x800, 0x737, 0x670, 0x5ad, 0x4f0, 0x43a, 0x38e, 0x2ed,
-		0x258, 0x1d1, 0x159, 0xf2, 0x9c, 0x58, 0x27, 0xa,
-		0x0, 0xa, 0x27, 0x58, 0x9c, 0xf2, 0x159, 0x1d1,
-		0x258, 0x2ed, 0x38e, 0x43a, 0x4f0, 0x5ad, 0x670, 0x737};
+		0x125, 0x141, 0x15e, 0x179, 0x194, 0x1ae, 0x1c7, 0x1de,
+0x1f3, 0x207, 0x218, 0x226, 0x233, 0x23c, 0x243, 0x248,
+0x249, 0x248, 0x243, 0x23c, 0x233, 0x226, 0x218, 0x207,
+0x1f3, 0x1de, 0x1c7, 0x1ae, 0x194, 0x179, 0x15e, 0x141,
+0x125, 0x108, 0xeb, 0xd0, 0xb5, 0x9b, 0x82, 0x6b,
+0x56, 0x42, 0x31, 0x23, 0x16, 0xd, 0x6, 0x1,
+0x0, 0x1, 0x6, 0xd, 0x16, 0x23, 0x31, 0x42,
+0x56, 0x6b, 0x82, 0x9b, 0xb5, 0xd0, 0xeb, 0x108};
 
 // Note lookup table. First is high a, then b... 
 const BaseType_t ARR_LUT[25] = {
@@ -48,7 +48,6 @@ const BaseType_t ARR_LUT[25] = {
 
 //Sine lookup table Counter
 static BaseType_t SLUT_CNT = 0;
-static BaseType_t ASS_CNT = 0;
 		
 //Sets up button, LED & TIM4
 void prvSetupHardware(){
@@ -99,10 +98,10 @@ void prvSetupHardware(){
 		TIM4->ARR |= ARR_LUT[0];
 		
 		//Enable TIM4 counter
-		//TIM4->CR1 |= 0x0001;
+		TIM4->CR1 |= 0x0001;
 		
 		// St priority of timer 4 interrupt to 1
-		NVIC_SetPriority(TIM4_IRQn, 0);
+		NVIC_SetPriority(TIM4_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 		
 		// Enable timer 4 interrupt controller
 		NVIC_EnableIRQ(TIM4_IRQn);
@@ -126,9 +125,6 @@ void prvSetupHardware(){
 }
 
 void TIM4_IRQHandler() {
-	
-
-	
 		//increment a variable
 		SLUT_CNT++;
 		//if that var is too high, wrap to 0
@@ -136,8 +132,20 @@ void TIM4_IRQHandler() {
 			SLUT_CNT = 0;
 		}
 		
+		uint16_t volume = 0;
+		xQueuePeekFromISR(vol_peek_queue, &volume);
+		
+		volume -= 5;
+		
+		if (volume < 0) {
+			volume = 0;
+		}
+		else if (volume > 7) {
+			volume = 7;
+		}
+		
 		//lookup SLUT, feed to DAC
-		DAC->DHR12R1 = SLUT[SLUT_CNT];
+		DAC->DHR12R1 = volume * SLUT[SLUT_CNT];
 	
 
 	//Clear update interrupt flag (UIF)
@@ -148,8 +156,6 @@ void TIM4_IRQHandler() {
 	return;
 	
 }
-
-
 
 void LEDtoggle(){
 	
@@ -252,14 +258,6 @@ void bouncyBoi() {
 			//BaseType_t new_state = ~xLEDState;
       xQueueOverwrite(xStateQueue, &new_state);
 				
-				// Update ARR on every button press
-				//updates on EVERY button press, skips sounds in audio
-				ASS_CNT++;
-				if (ASS_CNT >= 25){
-					ASS_CNT = 0;
-				}
-				TIM4->ARR = ARR_LUT[ASS_CNT];
-				
       //Return to waiting
       debouncer_state = WAIT;
       break;
@@ -267,4 +265,25 @@ void bouncyBoi() {
     
   }
   
+}
+
+void change_frequency() {
+	uint16_t buffer = 0;
+	while(1) {
+	// Receive from USART1 queue
+		xQueuePeek(freq_peek_queue, &buffer, portMAX_DELAY);
+		
+		// Subtract 5 from value
+		uint16_t ASS_CNT = buffer - 5;
+		
+		if (ASS_CNT < 0) {
+			ASS_CNT = 0;
+		}
+		else if (ASS_CNT >= 25) {
+			ASS_CNT = 24;
+		}
+		
+		// Index into table, update ARR
+		TIM4->ARR = ARR_LUT[ASS_CNT];
+	}
 }

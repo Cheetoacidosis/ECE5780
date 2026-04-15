@@ -180,7 +180,7 @@ uint8_t USART_ReadByte(USART_TypeDef * USARTx){
 	return (uint32_t)USARTx->RDR;
 }
 
-// This is for one sensor
+// This is for the frequency sensor
 void USART1_IRQHandler(){
 	uint8_t buffer[2] = {};
 	BaseType_t pRx_counter = 0;
@@ -197,7 +197,7 @@ void USART1_IRQHandler(){
 	}
 
 	BaseType_t lengthened_buffer = (BaseType_t) ((buffer[0] & 0x00FF) + ((buffer[1] << 8) & 0xFF00));
-	xQueueSendToBackFromISR(reading, &lengthened_buffer, NULL);
+	xQueueSendToBackFromISR(frequency_queue, &lengthened_buffer, NULL);
 
 	//Parse the data
 	//Eventually this will add the value to a queue, and defer parsing to a task
@@ -221,7 +221,7 @@ void USART3_IRQHandler(){
 	}
 	
 	BaseType_t lengthened_buffer = (BaseType_t) ((buffer[0] & 0x00FF) + ((buffer[1] << 8) & 0xFF00));
-	xQueueSendToBackFromISR(reading_USART3, &lengthened_buffer, NULL);
+	xQueueSendToBackFromISR(volume_queue, &lengthened_buffer, NULL);
 	
 }
 
