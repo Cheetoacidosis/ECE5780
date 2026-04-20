@@ -7,5 +7,6 @@
 #include "LEDtoggle.h"
 
 BaseType_t SetupQueue();
+void InitializeQueues();
 
 #endif

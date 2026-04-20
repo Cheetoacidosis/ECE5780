@@ -1,6 +1,7 @@
 #include "FreeRTOSConfig.h"
 #include "LEDtoggle.h"
 #include "queue.h"
+#include "my_queues.h"
 #include "USART.h"
 #include "censor.h"
 
@@ -58,6 +59,14 @@ int main( void )
 									configMINIMAL_STACK_SIZE,
 									NULL,
 									2,
+									&xHandle
+								);
+			
+		xTaskCreate( InitializeQueues,
+									"Before anything else, init the queues",
+									configMINIMAL_STACK_SIZE,
+									NULL,
+									3,
 									&xHandle
 								);
 			
