@@ -30,8 +30,8 @@ void InitializeQueues(){
 	while(1){
 		
 	//Initialize vol & freq peek queues
-//	uint16_t init_val = 1;
-//	xQueueOverwrite(vol_peek_queue, &init_val);
+	uint16_t init_val = 1;
+	xQueueOverwrite(vol_peek_queue, &init_val);
 //	xQueueOverwrite(freq_peek_queue, &init_val);
 		
 		

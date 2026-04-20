@@ -112,7 +112,7 @@ void prvSetupHardware(){
 		
 		// St priority of timer 4 interrupt to 1
 		//When set to anything other than 0, the sound becomes convoluted
-		NVIC_SetPriority(TIM4_IRQn, 1);
+		NVIC_SetPriority(TIM4_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
 		
 		// Enable timer 4 interrupt controller
 		NVIC_EnableIRQ(TIM4_IRQn);
@@ -137,14 +137,26 @@ void prvSetupHardware(){
 
 void TIM4_IRQHandler() {
 		//increment a variable
-		SLUT_CNT++;
-		//if that var is too high, wrap to 0
-		if (SLUT_CNT == 64){
-			SLUT_CNT = 0;
-		}
+//		SLUT_CNT++;
+//		//if that var is too high, wrap to 0
+//		if (SLUT_CNT == 64){
+//			SLUT_CNT = 0;
+//		}
+	
+		vTaskNotifyGiveIndexedFromISR(handle_update_DAC,	// TaskHandle_t xTaskHandle, 
+																				0, //UBaseType_t uxIndexToNotify, 
+																				NULL); //BaseType_t *pxHigherPriorityTaskWoken );
+//		uint16_t volume = 7;
+//		BaseType_t isPeekSuccess = xQueuePeekFromISR(vol_peek_queue, &volume);
 		
-		uint16_t volume = 1;
-//		xQueuePeekFromISR(vol_peek_queue, &volume);
+//		if (isPeekSuccess == pdPASS){
+//			// Update the volume
+//					//lookup SLUT, feed to DAC
+//				DAC->DHR12R1 = volume*SLUT[SLUT_CNT];
+//		} else {
+//			// Use default volume of 1
+//			DAC->DHR12R1 = SLUT[SLUT_CNT];
+//		}
 //		
 //		volume -= 5;
 //		
@@ -155,8 +167,7 @@ void TIM4_IRQHandler() {
 //			volume = 7;
 //		}
 		
-		//lookup SLUT, feed to DAC
-		DAC->DHR12R1 = volume*SLUT[SLUT_CNT];
+
 
 	//Clear update interrupt flag (UIF)
 	if ((TIM4->SR & TIM_SR_UIF) != 0) {
@@ -166,6 +177,42 @@ void TIM4_IRQHandler() {
 	return;
 	
 }
+
+
+// Updates DAC based on SLUT and volume
+void update_DAC(){
+	BaseType_t SLUT_CNT_local = 0;
+	uint32_t volume = 0;
+	
+	for (;;){
+		// Block until we get notification 0 from TIM4ISR
+	  ulTaskNotifyTakeIndexed(0, //index to wait on 
+														pdTRUE, //BaseType_t xClearCountOnExit, 
+														portMAX_DELAY); //TickType_t xTicksToWait );
+		// Read current volume
+		BaseType_t volumeSuccess = xTaskNotifyWaitIndexed( 1, //UBaseType_t uxIndexToWaitOn,
+																											 0x0000,	//uint32_t ulBitsToClearOnEntry,
+																											 0x0000,	//uint32_t ulBitsToClearOnExit,
+																												&volume, //uint32_t *pulNotificationValue,
+																												0); //TickType_t xTicksToWait );
+		// Update volume if notification was recieved successfully
+		if ((volume >= 0) && (volume <= 7)){
+			DAC->DHR12R1 = volume*SLUT[SLUT_CNT_local];
+		} else {
+			DAC->DHR12R1 = SLUT[SLUT_CNT_local];
+		}
+		
+		
+		//increment a variable
+		SLUT_CNT_local++;
+		//if that var is too high, wrap to 0
+		if (SLUT_CNT_local >= 64){
+			SLUT_CNT_local = 0;
+		}
+		
+	}
+}
+
 
 void LEDtoggle(){
 	

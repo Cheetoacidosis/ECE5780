@@ -5,6 +5,8 @@
 #include "USART.h"
 #include "censor.h"
 
+TaskHandle_t handle_update_DAC;
+
 int main( void )
 {
 	BaseType_t queue_state = SetupQueue();
@@ -61,6 +63,14 @@ int main( void )
 									2,
 									&xHandle
 								);
+								
+	  xTaskCreate( update_DAC,
+									"Change the volume of the speaker & update the sine wave",
+									configMINIMAL_STACK_SIZE,
+									NULL,
+									2,
+									&handle_update_DAC
+								);
 			
 		xTaskCreate( InitializeQueues,
 									"Before anything else, init the queues",
@@ -69,7 +79,7 @@ int main( void )
 									3,
 									&xHandle
 								);
-			
+		
 		/* Start the created tasks running. */
 		vTaskStartScheduler();
 	}

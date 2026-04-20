@@ -1,5 +1,6 @@
 #include "censor.h"
 #include "USART.h"
+#include "LEDtoggle.h"
 
 //Kinda works in tandem with data.c, because we need UART tyvm
 
@@ -61,8 +62,14 @@ void xUS100SensorRead(){
 			
 				
 //			uint16_t dist_as_int = (uint16_t) f_dist;  ck 4/20
-			uint16_t dist_as_int = 7;
-			xQueueOverwrite(vol_peek_queue, &dist_as_int);
+			uint32_t dist_as_int = 7;
+			xTaskNotifyIndexed(handle_update_DAC, //TaskHandle_t xTaskToNotify,
+                         1,   //    UBaseType_t uxIndexToNotify,
+                         dist_as_int,     //  uint32_t ulValue,
+                         eSetValueWithOverwrite);       //eNotifyAction eAction );
+
+				
+//			xQueueOverwrite(vol_peek_queue, &dist_as_int);
 			
 			uint8_t hundreds = (uint8_t)(f_dist / 100);
 			uint8_t tens = ((uint8_t)(f_dist / 10)) % 10;
