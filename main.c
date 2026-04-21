@@ -1,11 +1,10 @@
 #include "FreeRTOSConfig.h"
 #include "LEDtoggle.h"
 #include "queue.h"
-#include "my_queues.h"
 #include "USART.h"
 #include "censor.h"
 
-TaskHandle_t handle_update_DAC;
+extern volatile float current_volume;
 
 int main( void )
 {
@@ -48,13 +47,30 @@ int main( void )
 									&xHandle
 								);
 		
-		xTaskCreate( xUS100SensorRead,
+		xTaskCreate(  xUS100SensorRead,
 									"Do a little UART1'ing",
 									configMINIMAL_STACK_SIZE,
 									NULL,
 									2,
 									&xHandle
 								);
+		
+			//Attempt to run continuously
+//		xTaskCreate( vFrequencyTask,
+//									"Do a little UART1'ing",
+//									configMINIMAL_STACK_SIZE,
+//									NULL,
+//									2,
+//									&xHandle
+//								);
+//								
+//		xTaskCreate( vVolumeTask,
+//									"Do a little UART3'ing",
+//									configMINIMAL_STACK_SIZE,
+//									NULL,
+//									2,
+//									&xHandle
+//								);		
 								
 		xTaskCreate( change_frequency,
 									"Change the frequency of the speaker",
@@ -64,22 +80,14 @@ int main( void )
 									&xHandle
 								);
 								
-	  xTaskCreate( update_DAC,
-									"Change the volume of the speaker & update the sine wave",
+		xTaskCreate(change_volume,
+									"Volume Control",
 									configMINIMAL_STACK_SIZE,
 									NULL,
 									2,
-									&handle_update_DAC
-								);
-			
-		xTaskCreate( InitializeQueues,
-									"Before anything else, init the queues",
-									configMINIMAL_STACK_SIZE,
-									NULL,
-									3,
 									&xHandle
 								);
-		
+			
 		/* Start the created tasks running. */
 		vTaskStartScheduler();
 	}

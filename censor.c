@@ -1,6 +1,5 @@
 #include "censor.h"
 #include "USART.h"
-#include "LEDtoggle.h"
 
 //Kinda works in tandem with data.c, because we need UART tyvm
 
@@ -10,7 +9,31 @@ QueueHandle_t volume_queue;
 QueueHandle_t freq_peek_queue;
 QueueHandle_t vol_peek_queue;
 
-//Read the temp-er-at-ure
+
+
+//void vFrequencyTask() {
+//    while(1) {
+//        uint8_t command = 0x55;
+//        USART_Write(USART1, &command, 1);
+
+//        vTaskDelay(pdMS_TO_TICKS(50)); // 20 Hz sampling
+//    }
+//}
+
+
+
+//void vVolumeTask() {
+//    while(1) {
+//        uint8_t command = 0x55;
+//        USART_Write(USART3, &command, 1);
+
+//        vTaskDelay(pdMS_TO_TICKS(50));
+//    }
+//}
+
+
+
+	//Read the temp-er-at-ure
 void xUS100SensorRead(){
 	//Setup
 	BaseType_t buffer;
@@ -59,17 +82,8 @@ void xUS100SensorRead(){
 			float f_dist = dist[1] + (dist[0] << 8);
 			f_dist /= 10;
 				
-			
-				
-//			uint16_t dist_as_int = (uint16_t) f_dist;  ck 4/20
-			uint32_t dist_as_int = 7;
-			xTaskNotifyIndexed(handle_update_DAC, //TaskHandle_t xTaskToNotify,
-                         1,   //    UBaseType_t uxIndexToNotify,
-                         dist_as_int,     //  uint32_t ulValue,
-                         eSetValueWithOverwrite);       //eNotifyAction eAction );
-
-				
-//			xQueueOverwrite(vol_peek_queue, &dist_as_int);
+			uint16_t dist_as_int = (uint16_t) f_dist;
+			xQueueOverwrite(vol_peek_queue, &dist_as_int);
 			
 			uint8_t hundreds = (uint8_t)(f_dist / 100);
 			uint8_t tens = ((uint8_t)(f_dist / 10)) % 10;

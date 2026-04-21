@@ -3,6 +3,8 @@
 #include "USART.h"
 #include "censor.h"
 
+volatile float current_volume = 1.0;
+
 //BaseType_t LEDstate = 0;
 QueueHandle_t xStateQueue;
 
@@ -16,16 +18,6 @@ const BaseType_t SLUT[64] = {
 0x56, 0x42, 0x31, 0x23, 0x16, 0xd, 0x6, 0x1,
 0x0, 0x1, 0x6, 0xd, 0x16, 0x23, 0x31, 0x42,
 0x56, 0x6b, 0x82, 0x9b, 0xb5, 0xd0, 0xeb, 0x108};
-
-//const BaseType_t SLUT[64] = {
-//	0x800, 0x8c8, 0x98f, 0xa52, 0xb0f, 0xbc5, 0xc71, 0xd12,
-//	0xda7, 0xe2e, 0xea6, 0xf0d, 0xf63, 0xfa7, 0xfd8, 0xff5,
-//	0xfff, 0xff5, 0xfd8, 0xfa7, 0xf63, 0xf0d, 0xea6, 0xe2e,
-//	0xda7, 0xd12, 0xc71, 0xbc5, 0xb0f, 0xa52, 0x98f, 0x8c8,
-//	0x800, 0x737, 0x670, 0x5ad, 0x4f0, 0x43a, 0x38e, 0x2ed,
-//	0x258, 0x1d1, 0x159, 0xf2, 0x9c, 0x58, 0x27, 0x0a,
-//	0x00, 0x0a, 0x27, 0x58, 0x9c, 0xf2, 0x159, 0x1d1,
-//	0x258, 0x2ed, 0x38e, 0x43a, 0x4f0, 0x5ad, 0x670, 0x737};
 
 // Note lookup table. First is high a, then b... 
 const BaseType_t ARR_LUT[25] = {
@@ -112,7 +104,7 @@ void prvSetupHardware(){
 		
 		// St priority of timer 4 interrupt to 1
 		//When set to anything other than 0, the sound becomes convoluted
-		NVIC_SetPriority(TIM4_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY - 1);
+		NVIC_SetPriority(TIM4_IRQn, 1);
 		
 		// Enable timer 4 interrupt controller
 		NVIC_EnableIRQ(TIM4_IRQn);
@@ -137,26 +129,14 @@ void prvSetupHardware(){
 
 void TIM4_IRQHandler() {
 		//increment a variable
-//		SLUT_CNT++;
-//		//if that var is too high, wrap to 0
-//		if (SLUT_CNT == 64){
-//			SLUT_CNT = 0;
-//		}
-	
-		vTaskNotifyGiveIndexedFromISR(handle_update_DAC,	// TaskHandle_t xTaskHandle, 
-																				0, //UBaseType_t uxIndexToNotify, 
-																				NULL); //BaseType_t *pxHigherPriorityTaskWoken );
-//		uint16_t volume = 7;
-//		BaseType_t isPeekSuccess = xQueuePeekFromISR(vol_peek_queue, &volume);
+		SLUT_CNT++;
+		//if that var is too high, wrap to 0
+		if (SLUT_CNT == 64){
+			SLUT_CNT = 0;
+		}
 		
-//		if (isPeekSuccess == pdPASS){
-//			// Update the volume
-//					//lookup SLUT, feed to DAC
-//				DAC->DHR12R1 = volume*SLUT[SLUT_CNT];
-//		} else {
-//			// Use default volume of 1
-//			DAC->DHR12R1 = SLUT[SLUT_CNT];
-//		}
+//		uint16_t volume = 0;
+//		xQueuePeekFromISR(vol_peek_queue, &volume);
 //		
 //		volume -= 5;
 //		
@@ -167,7 +147,8 @@ void TIM4_IRQHandler() {
 //			volume = 7;
 //		}
 		
-
+		//lookup SLUT, feed to DAC
+		DAC->DHR12R1 = (uint16_t)(SLUT[SLUT_CNT] * current_volume);
 
 	//Clear update interrupt flag (UIF)
 	if ((TIM4->SR & TIM_SR_UIF) != 0) {
@@ -177,42 +158,6 @@ void TIM4_IRQHandler() {
 	return;
 	
 }
-
-
-// Updates DAC based on SLUT and volume
-void update_DAC(){
-	BaseType_t SLUT_CNT_local = 0;
-	uint32_t volume = 0;
-	
-	for (;;){
-		// Block until we get notification 0 from TIM4ISR
-	  ulTaskNotifyTakeIndexed(0, //index to wait on 
-														pdTRUE, //BaseType_t xClearCountOnExit, 
-														portMAX_DELAY); //TickType_t xTicksToWait );
-		// Read current volume
-		BaseType_t volumeSuccess = xTaskNotifyWaitIndexed( 1, //UBaseType_t uxIndexToWaitOn,
-																											 0x0000,	//uint32_t ulBitsToClearOnEntry,
-																											 0x0000,	//uint32_t ulBitsToClearOnExit,
-																												&volume, //uint32_t *pulNotificationValue,
-																												0); //TickType_t xTicksToWait );
-		// Update volume if notification was recieved successfully
-		if ((volume >= 0) && (volume <= 7)){
-			DAC->DHR12R1 = volume*SLUT[SLUT_CNT_local];
-		} else {
-			DAC->DHR12R1 = SLUT[SLUT_CNT_local];
-		}
-		
-		
-		//increment a variable
-		SLUT_CNT_local++;
-		//if that var is too high, wrap to 0
-		if (SLUT_CNT_local >= 64){
-			SLUT_CNT_local = 0;
-		}
-		
-	}
-}
-
 
 void LEDtoggle(){
 	
@@ -328,10 +273,10 @@ void change_frequency() {
 	uint16_t buffer = 0;
 	while(1) {
 	// Receive from USART1 queue
-		xQueueReceive(freq_peek_queue, &buffer, portMAX_DELAY);
+		xQueuePeek(freq_peek_queue, &buffer, portMAX_DELAY);
 		
 		// Subtract 5 from value
-		uint16_t ASS_CNT = buffer - 5;
+		uint16_t ASS_CNT = ((int32_t)buffer - 5);
 		
 		if (ASS_CNT < 0) {
 			ASS_CNT = 0;
@@ -344,3 +289,22 @@ void change_frequency() {
 		TIM4->ARR = ARR_LUT[ASS_CNT];
 	}
 }
+
+
+
+void change_volume() {
+    uint16_t buffer = 0;
+
+    while(1) {
+        xQueuePeek(vol_peek_queue, &buffer, portMAX_DELAY);
+
+        if (buffer > 50) buffer = 50; // clamp
+
+        // Scale to 0–1 range
+        float scale = buffer / 50.0;
+
+        // Store globally (or in volatile variable)
+        current_volume = scale;
+    }
+}
+
