@@ -76,7 +76,7 @@ int main( void )
 									"Change the frequency of the speaker",
 									configMINIMAL_STACK_SIZE,
 									NULL,
-									2,
+									1,
 									&xHandle
 								);
 								
@@ -84,7 +84,7 @@ int main( void )
 									"Volume Control",
 									configMINIMAL_STACK_SIZE,
 									NULL,
-									2,
+									1,
 									&xHandle
 								);
 			

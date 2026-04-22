@@ -198,7 +198,6 @@ void USART1_IRQHandler(){
 
 	BaseType_t lengthened_buffer = (BaseType_t) ((buffer[0] & 0x00FF) + ((buffer[1] << 8) & 0xFF00));
 	xQueueSendToBackFromISR(frequency_queue, &lengthened_buffer, NULL);
-
 	//Parse the data
 	//Eventually this will add the value to a queue, and defer parsing to a task
 }
