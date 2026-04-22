@@ -147,7 +147,7 @@ void xUS100SensorRead(){
 // Check if either value changed from its old
 		if (old_ASS_CNT != ASS_CNT){
 					uint8_t message[] = {'f','r','e','q',' ','c','h','g','d', '\n','\r'};
-					//USART_Write(USART2, message, sizeof(message));	
+					USART_Write(USART2, message, sizeof(message));	
 		}
 		if (old_volume != volume){
 					uint8_t message[] = {'V','o','l',' ',(volume + '0'), '\n','\r'};
