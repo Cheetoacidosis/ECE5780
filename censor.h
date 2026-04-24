@@ -6,6 +6,8 @@
 #include "queue.h"
 #include "USART.h"
 
+#define VOLDIST 30
+
 void xUS100SensorRead();
 
 extern QueueHandle_t SensorQueue;

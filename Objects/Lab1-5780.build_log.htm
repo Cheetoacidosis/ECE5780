@@ -36,17 +36,15 @@ Custom: C:\Keil\ARM\Bin\FCARM.exe @.\Auto_FcArm_Cmd.inp
 FCARM FILE CONVERTER V2.59
 Completed 1 File(s), Ratio 100%
 compiling output_file...
-censor.c(149): warning: unused variable 'message' [-Wunused-variable]
-  149 |                                         uint8_t message[] = {'f','r','e','q',' ','c','h','g','d', '\n','\r'};
-      |                                                 ^~~~~~~
-censor.c(70): warning: variable 'qReturn2' set but not used [-Wunused-but-set-variable]
-   70 |                         BaseType_t qReturn2 = xQueueReceive(frequency_queue, &dist[1], portTICK_PERIOD_MS*UART_WAIT_TIME);
-      |                                    ^
-2 warnings generated.
+compiling LEDtoggle.c...
+censor.c(48): warning: variable 'hot_off_the_press' set but not used [-Wunused-but-set-variable]
+   48 |         uint16_t hot_off_the_press = 0;
+      |                  ^
+1 warning generated.
 compiling censor.c...
 linking...
-Program Size: Code=19752 RO-data=892 RW-data=12 ZI-data=13028  
-".\Objects\Lab1-5780.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=19496 RO-data=892 RW-data=12 ZI-data=13028  
+".\Objects\Lab1-5780.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -94,27 +92,27 @@ Package Vendor: Keil
       Source file:   CMSIS/RTOS2/Source/os_systick.c
 
    * Component: ARM::CMSIS:RTOS2:FreeRTOS&Cortex-M@11.2.0
+      Include file:  CMSIS/RTOS2/FreeRTOS/Include/freertos_mpool.h
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/cmsis_os2.c
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/clib_os.c
-      Include file:  CMSIS/RTOS2/FreeRTOS/Include/freertos_mpool.h
 
    * Component: ARM::RTOS&FreeRTOS:Config&CMSIS RTOS2@11.2.0
       Include file:  CMSIS/RTOS2/FreeRTOS/Config/FreeRTOSConfig.h
 
    * Component: ARM::RTOS&FreeRTOS:Core&Cortex-M@11.2.0
       Source file:   CMSIS/RTOS2/FreeRTOS/Source/freertos_evr.c
-      Include file:  Source/include/FreeRTOS.h
-      Include file:  Source/include/semphr.h
       Include file:  Source/include/queue.h
       Source file:   Source/queue.c
-      Source file:   Source/list.c
-      Source file:   Source/portable/GCC/ARM_CM4F/port.c
-      Include file:  Source/include/task.h
       Source file:   Source/tasks.c
+      Include file:  Source/include/task.h
+      Source file:   Source/portable/GCC/ARM_CM4F/port.c
+      Source file:   Source/list.c
+      Include file:  Source/include/FreeRTOS.h
+      Include file:  Source/include/semphr.h
 
    * Component: ARM::RTOS&FreeRTOS:Event Groups@11.2.0
-      Include file:  Source/include/event_groups.h
       Source file:   Source/event_groups.c
+      Include file:  Source/include/event_groups.h
 
    * Component: ARM::RTOS&FreeRTOS:Heap&Heap_4@11.2.0
       Source file:   Source/portable/MemMang/heap_4.c
@@ -131,8 +129,8 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup@1.3.2
       Include file:  Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h
-      Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/arm/startup_stm32l476xx.s
       Source file:   MDK/Device/Source/ARM/STM32L4xx_DB_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/arm/startup_stm32l476xx.s
       Source file:   Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/system_stm32l4xx.c
 Build Time Elapsed:  00:00:00
 </pre>

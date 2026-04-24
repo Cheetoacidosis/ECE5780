@@ -290,15 +290,19 @@ void change_frequency() {
 		// Subtract 5 from value
 		int32_t ASS_CNT = ((int32_t)buffer - 5);
 		
+		
 		if (ASS_CNT < 0) {
 			ASS_CNT = 0;
 		}
-		else if (ASS_CNT >= 25) {   
+		else if (ASS_CNT >= 24*2 + 1) {   
+			ASS_CNT = 24*2;
+		}
+		
+		// Scale
+		ASS_CNT = ASS_CNT / 2;
+	 if (ASS_CNT >= 24) {
 			ASS_CNT = 24;
 		}
-//		else if (ASS_CNT >= 10) {
-//			ASS_CNT = 9;
-//		}
 		
 		// Index into table, update ARR
 		TIM4->ARR = ARR_LUT[ASS_CNT];
@@ -313,11 +317,11 @@ void change_volume() {
     while(1) {
         xQueueReceive(vol_peek_queue, &buffer, portMAX_DELAY);
 
-        if (buffer > 50) buffer = 50; // clamp
+        if (buffer > VOLDIST) buffer = VOLDIST; // clamp
 				if (buffer < 0) buffer = 0;
 
-        // Scale to 0–7.9 range
-        float scale = 8 * buffer / 50.0;
+        // Scale to 0–7 range
+        float scale = 7 * (float)buffer / VOLDIST;
 				// Chop off decimal point
 				uint16_t scale_int = (uint16_t)scale;
 

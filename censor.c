@@ -37,12 +37,15 @@ QueueHandle_t vol_peek_queue;
 void xUS100SensorRead(){
 	//Setup
 	//BaseType_t buffer;
-	const BaseType_t UART_WAIT_TIME = 150;
+	const BaseType_t UART_WAIT_TIME = 100; //ms
 	float f_dist = 0;
 	uint16_t dist_freq = 0;
 	uint16_t dist_vol = 0;
+	uint16_t old_dist_vol = 0;
+	uint16_t old_dist_freq = 0;
 	uint16_t old_ASS_CNT = 0;
 	uint16_t old_volume = 0;
+	uint16_t hot_off_the_press = 0;
 	
 	for (;;){
 
@@ -68,9 +71,14 @@ void xUS100SensorRead(){
 			BaseType_t dist[2] = {};
 			BaseType_t qReturn1 = xQueueReceive(frequency_queue, &dist[0], portTICK_PERIOD_MS*UART_WAIT_TIME);
 			BaseType_t qReturn2 = xQueueReceive(frequency_queue, &dist[1], portTICK_PERIOD_MS*UART_WAIT_TIME);
-			
+				
+			//If only one queue returned successful, reuse the old reading
+			if ((qReturn1 != errQUEUE_EMPTY) && (qReturn2 == errQUEUE_EMPTY)){
+				dist_freq = old_dist_freq;
+				xQueueOverwrite(freq_peek_queue, &dist_freq);
+				
 			// if both queues returned successfully
-			if ((qReturn1 != errQUEUE_EMPTY)){// && (qReturn2 != errQUEUE_EMPTY)){
+			} else if ((qReturn1 != errQUEUE_EMPTY)){// && (qReturn2 != errQUEUE_EMPTY)){
 					f_dist = dist[1] + (dist[0] << 8);
 					f_dist /= 10;
 						
@@ -103,21 +111,28 @@ void xUS100SensorRead(){
 			qReturn1 = xQueueReceive(volume_queue, &dist[0], portTICK_PERIOD_MS*UART_WAIT_TIME);
 			qReturn2 = xQueueReceive(volume_queue, &dist[1], portTICK_PERIOD_MS*UART_WAIT_TIME);
 			
+			//If only one queue returned successful, reuse the old reading
+			if ((qReturn1 != errQUEUE_EMPTY) && (qReturn2 == errQUEUE_EMPTY)){
+				dist_vol = old_dist_vol;
+				xQueueOverwrite(vol_peek_queue, &dist_vol);
+				
 			// if both queues returned successfully
-			if ((qReturn1 != errQUEUE_EMPTY)){// && (qReturn2 != errQUEUE_EMPTY)){
+			}else if ((qReturn1 != errQUEUE_EMPTY) && (qReturn2 != errQUEUE_EMPTY)){
 					f_dist = 0;
 					f_dist = dist[1] + (dist[0] << 8);
+					hot_off_the_press = f_dist;
 					f_dist /= 10;
 						
 					dist_vol = (uint16_t) f_dist;
 					xQueueOverwrite(vol_peek_queue, &dist_vol);
 					
-					//uint8_t message[] = {'v','o','l','u','\n','\r'};
+					//uint8_t message[] = {'v','o','l','u',' ',(uint8_t)(dist_vol),'\n','\r'};
 					//USART_Write(USART2, message, sizeof(message));
 					
 			// Assume that the reading was too far away
 			} else {
 					dist_vol = 100;
+				  hot_off_the_press = 420;
 				  xQueueOverwrite(vol_peek_queue, &dist_vol);
 					//uint8_t message[] = {'O', 'O', 'B', '\n','\r'};
 					//USART_Write(USART2, message, sizeof(message));	
@@ -126,27 +141,139 @@ void xUS100SensorRead(){
 
 // Re-create the math that is done to these values
 		// Frequency
+		old_dist_freq = dist_freq;
 		uint16_t ASS_CNT = ((uint16_t)dist_freq - 5);
 		if (ASS_CNT < 0) {
 			ASS_CNT = 0;
 		}
-		else if (ASS_CNT >= 25) {   
-			ASS_CNT = 24;
+		else if (ASS_CNT >= 24*2 - 1) {   
+			ASS_CNT = 24*2;
 		}
+		ASS_CNT = ASS_CNT/2;
 			
 		// Volume
-		if (dist_vol > 50) dist_vol = 50; // clamp
+		old_dist_vol = dist_vol;
+		if (dist_vol > VOLDIST) dist_vol = VOLDIST; // clamp
 		if (dist_vol < 0) dist_vol = 0;
 
-		// Scale to 0–7.9 range
-		float scale = 8 * dist_vol / 50.0;
+		// Scale to 0–6.9 range
+		float scale = ((float)(7 * dist_vol)) / VOLDIST;
 		// Chop off decimal point
 		uint16_t volume = (uint16_t)scale;
 		
 		
 // Check if either value changed from its old
 		if (old_ASS_CNT != ASS_CNT){
-					uint8_t message[] = {'f','r','e','q',' ','c','h','g','d', '\n','\r'};
+					uint8_t note[3] = {'b','o','o'};
+					switch(ASS_CNT){
+									 case 0:
+										 note[0] = 'C';
+									   note[1] = '3';
+									   note[2] = ' ';
+						break; case 1:
+										 note[0] = 'C';
+									   note[1] = '#';
+									   note[2] = '3';
+					  break; case 2:
+										 note[0] = 'D';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 3:
+										 note[0] = 'D';
+									   note[1] = '#';
+									   note[2] = '3';
+					  break; case 4:
+										 note[0] = 'E';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 5:
+										 note[0] = 'F';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 6:
+										 note[0] = 'F';
+									   note[1] = '#';
+									   note[2] = '3';
+					  break; case 7:
+										 note[0] = 'G';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 8:
+										 note[0] = 'G';
+									   note[1] = '#';
+									   note[2] = '3';
+					  break; case 9:
+										 note[0] = 'A';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 10:
+										 note[0] = 'A';
+									   note[1] = '#';
+									   note[2] = '3';
+					  break; case 11:
+										 note[0] = 'B';
+									   note[1] = '3';
+									   note[2] = ' ';
+					  break; case 12:
+										 note[0] = 'C';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 13:
+										 note[0] = 'C';
+									   note[1] = '#';
+									   note[2] = '4';
+					  break; case 14:
+										 note[0] = 'D';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 15:
+										 note[0] = 'D';
+									   note[1] = '#';
+									   note[2] = '4';
+					  break; case 16:
+										 note[0] = 'E';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 17:
+										 note[0] = 'F';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 18:
+										 note[0] = 'F';
+									   note[1] = '#';
+									   note[2] = '4';
+					  break; case 19:
+										 note[0] = 'G';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 20:
+										 note[0] = 'G';
+									   note[1] = '#';
+									   note[2] = '4';
+					  break; case 21:
+										 note[0] = 'A';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 22:
+										 note[0] = 'A';
+									   note[1] = '#';
+									   note[2] = '4';
+					  break; case 23:
+										 note[0] = 'B';
+									   note[1] = '4';
+									   note[2] = ' ';
+					  break; case 24:
+										 note[0] = 'C';
+									   note[1] = '5';
+									   note[2] = ' ';
+						default:
+							note[0] = 'C';
+									   note[1] = '5';
+									   note[2] = ' ';
+						break;
+					}
+			
+					uint8_t message[] = {note[0],note[1],note[2], '\n','\r'};
 					USART_Write(USART2, message, sizeof(message));	
 		}
 		if (old_volume != volume){
